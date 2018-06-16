@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6928329C20D4268300914306 /* ImageReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6928329B20D4268300914306 /* ImageReplace.swift */; };
+		6928329E20D42AC600914306 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6928329D20D42AC600914306 /* Image.swift */; };
 		692A8F162088CB2F00398540 /* NameSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A8F152088CB2E00398540 /* NameSelection.swift */; };
 		692A8F182088D18E00398540 /* LevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A8F172088D18E00398540 /* LevelConfiguration.swift */; };
 		693D75E62089E030006E7553 /* LevelSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D75E52089E030006E7553 /* LevelSelection.swift */; };
 		693FCD38208A406100078969 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FCD37208A406100078969 /* Game.swift */; };
+		6983067A20CDCB97006B1279 /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983067920CDCB97006B1279 /* HighScores.swift */; };
+		6983067C20CDCBE2006B1279 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983067B20CDCBE2006B1279 /* HighScoreCell.swift */; };
+		699F8FEC20CF166B00B4FA38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F8FEB20CF166B00B4FA38 /* Utils.swift */; };
 		69ABDF452088C5740043F1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABDF442088C5740043F1A2 /* AppDelegate.swift */; };
 		69ABDF4A2088C5740043F1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69ABDF482088C5740043F1A2 /* Main.storyboard */; };
-		69ABDF4D2088C5740043F1A2 /* MemoryGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69ABDF4B2088C5740043F1A2 /* MemoryGame.xcdatamodeld */; };
 		69ABDF4F2088C5740043F1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69ABDF4E2088C5740043F1A2 /* Assets.xcassets */; };
 		69ABDF5D2088C5740043F1A2 /* MemoryGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABDF5C2088C5740043F1A2 /* MemoryGameTests.swift */; };
 		69ABDF682088C5740043F1A2 /* MemoryGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABDF672088C5740043F1A2 /* MemoryGameUITests.swift */; };
 		69ABDF762088C6DE0043F1A2 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69ABDF752088C6DE0043F1A2 /* Launch.storyboard */; };
 		69FA464B208D2EFE00E5FB15 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA464A208D2EFE00E5FB15 /* Card.swift */; };
+		69FD5DF520CF21B300F337AA /* MemoryGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69FD5DF320CF21B300F337AA /* MemoryGame.xcdatamodeld */; };
+		69FD5DF720CF221300F337AA /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD5DF620CF221300F337AA /* HighScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +45,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6928329B20D4268300914306 /* ImageReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageReplace.swift; sourceTree = "<group>"; };
+		6928329D20D42AC600914306 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		692A8F152088CB2E00398540 /* NameSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameSelection.swift; sourceTree = "<group>"; };
 		692A8F172088D18E00398540 /* LevelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelConfiguration.swift; sourceTree = "<group>"; };
 		693D75E52089E030006E7553 /* LevelSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelection.swift; sourceTree = "<group>"; };
 		693FCD37208A406100078969 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6983067920CDCB97006B1279 /* HighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
+		6983067B20CDCBE2006B1279 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
+		699F8FEB20CF166B00B4FA38 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		69ABDF412088C5740043F1A2 /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ABDF442088C5740043F1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69ABDF492088C5740043F1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		69ABDF4C2088C5740043F1A2 /* MemoryGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoryGame.xcdatamodel; sourceTree = "<group>"; };
 		69ABDF4E2088C5740043F1A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69ABDF532088C5740043F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ABDF582088C5740043F1A2 /* MemoryGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +67,8 @@
 		69ABDF692088C5740043F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ABDF752088C6DE0043F1A2 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		69FA464A208D2EFE00E5FB15 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		69FD5DF420CF21B300F337AA /* MemoryGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoryGame.xcdatamodel; sourceTree = "<group>"; };
+		69FD5DF620CF221300F337AA /* HighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +121,21 @@
 			children = (
 				69FA464A208D2EFE00E5FB15 /* Card.swift */,
 				693FCD37208A406100078969 /* Game.swift */,
+				6928329D20D42AC600914306 /* Image.swift */,
 				693D75E52089E030006E7553 /* LevelSelection.swift */,
 				692A8F152088CB2E00398540 /* NameSelection.swift */,
 				69ABDF442088C5740043F1A2 /* AppDelegate.swift */,
 				69ABDF482088C5740043F1A2 /* Main.storyboard */,
 				69ABDF4E2088C5740043F1A2 /* Assets.xcassets */,
 				69ABDF532088C5740043F1A2 /* Info.plist */,
+				699F8FEB20CF166B00B4FA38 /* Utils.swift */,
 				69ABDF752088C6DE0043F1A2 /* Launch.storyboard */,
-				69ABDF4B2088C5740043F1A2 /* MemoryGame.xcdatamodeld */,
 				692A8F172088D18E00398540 /* LevelConfiguration.swift */,
+				69FD5DF320CF21B300F337AA /* MemoryGame.xcdatamodeld */,
+				6983067B20CDCBE2006B1279 /* HighScoreCell.swift */,
+				6983067920CDCB97006B1279 /* HighScores.swift */,
+				69FD5DF620CF221300F337AA /* HighScore.swift */,
+				6928329B20D4268300914306 /* ImageReplace.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -274,12 +292,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6928329C20D4268300914306 /* ImageReplace.swift in Sources */,
 				692A8F162088CB2F00398540 /* NameSelection.swift in Sources */,
 				693FCD38208A406100078969 /* Game.swift in Sources */,
 				69FA464B208D2EFE00E5FB15 /* Card.swift in Sources */,
+				6983067C20CDCBE2006B1279 /* HighScoreCell.swift in Sources */,
+				6983067A20CDCB97006B1279 /* HighScores.swift in Sources */,
+				6928329E20D42AC600914306 /* Image.swift in Sources */,
+				69FD5DF720CF221300F337AA /* HighScore.swift in Sources */,
+				699F8FEC20CF166B00B4FA38 /* Utils.swift in Sources */,
 				692A8F182088D18E00398540 /* LevelConfiguration.swift in Sources */,
 				69ABDF452088C5740043F1A2 /* AppDelegate.swift in Sources */,
-				69ABDF4D2088C5740043F1A2 /* MemoryGame.xcdatamodeld in Sources */,
+				69FD5DF520CF21B300F337AA /* MemoryGame.xcdatamodeld in Sources */,
 				693D75E62089E030006E7553 /* LevelSelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,12 +590,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		69ABDF4B2088C5740043F1A2 /* MemoryGame.xcdatamodeld */ = {
+		69FD5DF320CF21B300F337AA /* MemoryGame.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				69ABDF4C2088C5740043F1A2 /* MemoryGame.xcdatamodel */,
+				69FD5DF420CF21B300F337AA /* MemoryGame.xcdatamodel */,
 			);
-			currentVersion = 69ABDF4C2088C5740043F1A2 /* MemoryGame.xcdatamodel */;
+			currentVersion = 69FD5DF420CF21B300F337AA /* MemoryGame.xcdatamodel */;
 			path = MemoryGame.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

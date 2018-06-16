@@ -12,10 +12,15 @@ import UIKit
 class Card: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     var id: Int = 0
+    
     var flipped: Bool = false {
         didSet {
-            imageView.isHidden = !flipped
-            
+            if (flipped) {
+                imageView.image = UIImage(data: UserDefaults.standard.data(forKey: String(format: "card%d", id))!)!
+            } else {
+                imageView.image = UIImage(named: "back")
+            }
+            UIView.transition(with: self, duration: 2, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         }
     }
 }

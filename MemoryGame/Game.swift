@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class Game: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -17,10 +18,8 @@ class Game: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath) as! Card
         
-        let id = indexPath.section + indexPath.row * (levelConf?.numRows)!
-        cell.id = cards![id % levelConf!.numRows][id % levelConf!.numCols]
-        cell.imageView.image = UIImage(named: String(cards![id % levelConf!.numRows][id % levelConf!.numCols]))
-        cell.imageView.isHidden = true
+        cell.id = cards![indexPath.row][indexPath.section]
+        cell.flipped = false
         
         return cell
     }
@@ -42,7 +41,7 @@ class Game: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
                 checkEnd()
             } else {
                 let curFlip = self.lastFlipped!
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                     cell.flipped = false
                     curFlip.flipped = false
                 })
@@ -57,7 +56,12 @@ class Game: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
             let alert = UIAlertController(title: "GAME END", message: "You've won!!!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
                 DispatchQueue.main.async(execute: {
-                    () in
+                    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                    let managedContext = appDelegate?.persistentContainer.viewContext
+                    let score = HighScore(insertInto: managedContext)
+                    score.name = self.name
+                    score.time = self.time as NSNumber
+                    score.save()
                     self.dismiss(animated: true, completion: nil)
                 })
             }))
@@ -102,41 +106,33 @@ class Game: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    func shuffleArray(array: [Int]) -> [Int] {
-        var shuffled: [Int] = Array()
-        var items = array
+    func shuffle(numbers: [Int]) -> [Int] {
+        var tmp = numbers
+        var result = [Int]()
         
-        for _ in 0..<array.count {
-            let rand = Int(arc4random_uniform(UInt32(items.count)))
-            shuffled.append(items[rand])
-            items.remove(at: rand)
+        for i in 0..<numbers.count {
+            var rand = Int(arc4random_uniform(UInt32(tmp.count)))
+            result.append(
+                tmp[rand])
+            tmp.remove(at: rand)
         }
-
-        return shuffled
-    }
-    
-    func uniqueRandoms(numberOfRandoms: Int, minNum: Int, maxNum: UInt32) -> [Int] {
-        var uniqueNumbers = Set<Int>()
-        while uniqueNumbers.count < numberOfRandoms {
-            uniqueNumbers.insert(Int(arc4random_uniform(maxNum)) + minNum)
-        }
-        return Array(uniqueNumbers)
+        
+        return result
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let totalCards = levelConf!.numRows * levelConf!.numCols / 2
-        let cards = uniqueRandoms(numberOfRandoms: totalCards, minNum: 1, maxNum: 10)
-        var locations = shuffleArray(array: Array(0...(totalCards * 2 - 1)))
+        var locations = shuffle(numbers: Array(0..<totalCards*2))
         self.cards = Array(repeating: Array(repeating: 0, count: self.levelConf!.numCols), count: self.levelConf!.numRows)
         
-        for card in cards {
+        for card in 0..<totalCards {
             var loc = locations.removeFirst()
-            self.cards![loc % levelConf!.numRows][loc % levelConf!.numCols] = card
+            self.cards![loc % levelConf!.numRows][loc % levelConf!.numCols] = card + 1
             
             loc = locations.removeFirst()
-            self.cards![loc % levelConf!.numRows][loc % levelConf!.numCols] = card
+            self.cards![loc % levelConf!.numRows][loc % levelConf!.numCols] = card + 1
         }
         
         self.nameLabel.text! += name

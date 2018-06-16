@@ -8,11 +8,17 @@
 
 import UIKit
 
-class NameSelection: UIViewController {
+class NameSelection: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     
     var name: String = ""
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        enter(goButton)
+        return false
+    }
     
     @IBAction func enter(_ sender: UIButton) {
         if (nameField.text?.count == 0) {
